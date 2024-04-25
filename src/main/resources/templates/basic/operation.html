@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>산술 연산
+        <ul>
+            <li>10 + 2 = <span th:text="10 + 2"></span></li>
+            <li>10 % 2 == 0 = <span th:text="10 % 2 == 0"></span></li>
+        </ul>
+    </li>
+    <li>비교 연산
+        <ul>
+            <li>1 > 10 = <span th:text="1 &gt; 10"></span></li>
+            <li>1 gt 10 = <span th:text="1 gt 10"></span></li>
+            <li>1 >= 10 = <span th:text="1 >= 10"></span></li>
+            <li>1 ge 10 = <span th:text="1 ge 10"></span></li>
+            <li>1 == 10 = <span th:text="1 == 10"></span></li>
+            <li>1 != 10 = <span th:text="1 != 10"></span></li>
+        </ul>
+    </li>
+    <li>조건식
+        <ul>
+            <li>(10 % 2 == 0)? '짝수':'홀수' = <span th:text="(10 % 2 == 0)? '짝수':'홀수'"></span></li>
+            <!--java 연산자 쓰는 방법아고 똑같음-->
+        </ul>
+    </li>
+    <li>Elvis 연산자
+        <ul>
+            <li>${data}?: '데이터가 없습니다.' = <span th:text="${data}?: '데이터가 없습니다.'"></span></li>
+            <!-- Elvis 연산자. 조건식의 축약버전?
+                데이터가 있으면 데이터 그대로 출력하고, 없으면 문자 출력해줌           -->
+            <li>${nullData}?: '데이터가 없습니다.' = <span th:text="${nullData}?: '데이터가 없습니다.'"></span></li>
+        </ul>
+    </li>
+    <li>No-Operation
+        <ul>
+            <li>${data}?: _ = <span th:text="${data}?: _">데이터가 없습니다.</span></li>
+            <li>${nullData}?: _ = <span th:text="${nullData}?: _">데이터가 없습니다.</span></li>
+            <!--'_' 언더바 : no operation -->
+            <!-- ${data}는 데이터가 있어서 출력 해주는데, ${nullData}는 데이터가 없으므로 기본 태그 내 문구를 출력해줌           -->
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
